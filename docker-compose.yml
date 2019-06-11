@@ -1,19 +1,17 @@
 version: '3'
 services:
   prisma:
-    image: prismagraphql/prisma:1.14
+    image: prismagraphql/prisma:1.34
     restart: always
     ports:
     - "4466:4466"
     environment:
       PRISMA_CONFIG: |
-        managementApiSecret: my-server-secret-123
         port: 4466
         databases:
           default:
-            connector: mysql  # or `postgres`
-            migrations: true
-            host: db
-            port: 3306        # or `5432` for `postgres`
-            user: root
-            password: prisma
+            connector: mysql
+            host: prismamysql.c4ml1ylihxru.us-east-1.rds.amazonaws.com
+            port: 3306
+            user: adsis
+            password: adsisadsis
